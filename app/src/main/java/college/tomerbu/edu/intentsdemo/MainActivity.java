@@ -19,12 +19,23 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        initLayout();
-         
 
-        deck = new BlackJackDeck();
+         initLayout();
+        deck = new BlackJackDeck(getResources());
 
+        btnDraw.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                drawCard();
+            }
+        });
 
+    }
+
+    private void drawCard() {
+        BlackjackCard card = deck.draw();
+        if (card != null)
+            ivPlayerCard.setImageResource(card.getImageResId());
     }
 
 
@@ -33,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
         tvDealerScore = (TextView) findViewById(R.id.tvScoreDealer);
 
         ivPlayerCard = (ImageView) findViewById(R.id.ivPlayerCard);
-        ivDealerCard = (ImageView) findViewById(R.id.ivDealerCards);
+        ivDealerCard = (ImageView) findViewById(R.id.ivDealerCard);
 
         btnDraw = (Button) findViewById(R.id.btnDraw);
         btnStand = (Button) findViewById(R.id.btnStand);

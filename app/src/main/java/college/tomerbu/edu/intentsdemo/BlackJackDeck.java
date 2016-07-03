@@ -1,34 +1,48 @@
 package college.tomerbu.edu.intentsdemo;
 
+import android.content.res.Resources;
 import android.support.annotation.Nullable;
 
 import java.util.ArrayList;
 import java.util.Collections;
 
-/**
- * Created by stud27 on 03/07/16.
- */
-//TODO: fix the cards image...
 public class BlackJackDeck {
+
+    private final Resources res;
     private ArrayList<BlackjackCard> cards;
 
-    public BlackJackDeck() {
+    public BlackJackDeck(Resources res) {
+        this.res = res;
         fillDeck();
     }
 
     private void fillDeck() {
         cards = new ArrayList<>();
-        String[] suits = {"♥", "♦", "♣", "♠"};
-        String[] ranks = {"2", "3", "4", "5", "6", "7", "8", "9", "10", "jack", "queen", "king", "ace"};
+        String[] suits = {"hearts", "diamonds", "spades", "clubs"};
+        String[] ranks = {"2", "3", "4", "5", "6", "7", "8", "9", "10"};
+
 
 
         for (String suit : suits) {
             for (String rank : ranks) {
-                //TODO: Fix image paths
-                BlackjackCard card = new BlackjackCard(suit, rank, R.drawable.ace_of_clubs);
+                String cardName = "card_"+rank + "_of_" + suit;
+                int id = res.getIdentifier(cardName, "drawable", "college.tomerbu.edu.intentsdemo");
+                BlackjackCard card = new BlackjackCard(suit, rank, id);
                 cards.add(card);
             }
         }
+
+        ranks = new String[]{"jack", "queen", "king", "ace"};
+        for (String suit : suits) {
+            for (String rank : ranks) {
+                String cardName = rank + "_of_" + suit;
+                int id = res.getIdentifier(cardName, "drawable", getClass().getPackage().getName());
+
+                BlackjackCard card = new BlackjackCard(suit, rank, id);
+                cards.add(card);
+            }
+        }
+
         shuffle();
     }
 

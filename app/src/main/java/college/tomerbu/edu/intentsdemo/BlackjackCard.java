@@ -10,7 +10,6 @@ public class BlackjackCard {
 
     //Constructor
     public BlackjackCard(String suit, String rank, int imageResId) {
-
         this.suit = suit;
         this.rank = rank;
         this.imageResId = imageResId;
@@ -41,4 +40,12 @@ public class BlackjackCard {
         this.imageResId = imageResId;
     }
 
+    @Override
+    public String toString() {
+        return "BlackjackCard{" +
+                "suit='" + suit + '\'' +
+                ", rank='" + rank + '\'' +
+                ", imageResId=" + imageResId +
+                '}';
+    }
 }

@@ -11,21 +11,21 @@
         android:layout_height="wrap_content"
         android:text="18"
         android:gravity="right"
-        android:id="@+id/tvScore"
+        android:id="@+id/tvPlayerScore"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_alignRight="@+id/ivDealerCards"
-        android:layout_alignEnd="@+id/ivDealerCards" />
+        android:layout_alignRight="@+id/ivPlayerCard"
+        android:layout_alignEnd="@+id/ivPlayerCard" />
 
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/ivDealerCards"
+        android:id="@+id/ivPlayerCard"
         android:src="@drawable/ace_of_clubs"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/tvScore"
+        android:layout_below="@+id/tvPlayerScore"
         android:layout_above="@+id/btnStand" />
 
     <Button
@@ -45,8 +45,8 @@
         android:text="Draw"
         android:id="@+id/btnDraw"
         android:layout_alignTop="@+id/btnStand"
-        android:layout_alignRight="@+id/ivDealerCards"
-        android:layout_alignEnd="@+id/ivDealerCards" />
+        android:layout_alignRight="@+id/ivPlayerCard"
+        android:layout_alignEnd="@+id/ivPlayerCard" />
 
 
 </RelativeLayout>
