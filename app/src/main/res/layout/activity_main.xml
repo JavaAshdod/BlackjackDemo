@@ -10,14 +10,17 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="college.tomerbu.edu.intentsdemo.MainActivity">
 
+
     <include
+        android:id="@+id/playerLayout"
         layout="@layout/player_layout"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1" />
 
     <include
-        layout="@layout/player_layout"
+        android:id="@+id/dealerLayout"
+        layout="@layout/dealer_layout"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1" />
